@@ -1,0 +1,168 @@
+
+.text-caption{
+   
+    padding: 10px;
+    height: 60px;
+    background-color:rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    bottom: 60px;
+    width:100%;
+}
+.img-con, .text-caption{
+    transition: .5s ease;
+    backface-visibility: hidden;
+    background-color: none;
+    
+}
+.img-con:hover .image, .img-con:hover .text-caption{
+  opacity: 0.3;
+}
+.img-con:hover .middle {
+  opacity: 1;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.edit-action {
+  background-color: #53b356;
+  color: white;
+  font-size: 16px;
+  padding:5px 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.delete-action {
+  background-color: rgb(218, 72, 72);
+  color: white;
+  font-size: 16px;
+  padding:5px 20px;
+  border-radius: 10px;
+  border-color: transparent;
+
+}
+.center_text {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.left-text {
+    position: absolute;
+    left: 23%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.profile{
+    top: 17%;
+}
+.btn-add{
+    color: whitesmoke;
+    background-color: #5e0782;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 20px;
+    
+}
+a:hover {
+    color: #1d68a7;
+    text-decoration: none !important;
+  }
+
+  .card {
+    /* Add shadows to create the "card" effect */
+    width:180px !important;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+  .create{
+      width: 100%;
+      padding: 5px;
+      color: white;
+      background: #5e0782;
+      margin-bottom: 10px;
+      outline: none;
+      border: none;
+      height: 40px;
+      /* border-radius: 10px; */
+  }
+
+  .post-con{
+    border: 2px solid #a727c2;
+    height: 100px;
+    border-radius: 10px;
+    width: 230px !important;
+    margin-left: 30px;
+    margin-top: 10px;
+
+}
+.number{
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+    margin: 0;  
+    padding: 0px;
+    height: 50px;
+}
+.label{
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    margin: 0;  
+    padding: 5px;
+    font-weight: bold;
+
+}
+.label-con{
+    padding-left: 35% !important;
+    padding-right: 8%;
+}
+.user-label{
+  padding-left: 25% !important;
+  padding-right: 5%;
+}
+.username{
+    font-size: 50px;
+}
+.shadow-md{
+    -webkit-box-shadow: -5px 1px 17px 1px rgba(0,0,0,0.29);
+    -moz-box-shadow: -5px 1px 17px 1px rgba(0,0,0,0.29);
+    box-shadow: -5px 1px 17px 1px rgba(0,0,0,0.29);
+}
+
+.with-shadow{
+    -webkit-box-shadow: -5px 1px 17px 1px rgba(0,0,0,0.29);
+    -moz-box-shadow: -5px 1px 17px 1px rgba(0,0,0,0.29);
+    box-shadow: -5px 1px 17px 1px rgba(0,0,0,0.29);
+    width: 100%;
+}
+.pg-links{
+    margin: 20px;
+    bottom: 0;
+}
+.nav-link{
+    font-size: 20px !important;
+    font-family: inherit;
+}
+.nav-item{
+    margin-left: 20px !important;
+} 

@@ -1,10 +1,12 @@
 
             html, body {
-                background-color: #EAE7DC;
+                /* background-color: #EAE7DC; */
+                background: rgb(42,0,85);
+                background: linear-gradient(146deg, rgba(42,0,85,1) 0%, rgba(110,5,170,1) 51%, rgba(181,21,194,1) 100%);
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                max-height: 100vh;
+                height: 100vh;
                 margin: 0;
             }
             .navbar{
@@ -20,25 +22,30 @@
             }
             .welcome {
                 height: 70vh;
-                width: 700px;
-                min-width: 300px;
-                background: #fff;
+                width: 40vw;
+               
+                background-color: white;
                 position: absolute;
-                left: 5%;
-                top: 15%; 
+                right: 60%;
+                -webkit-transform: translateX(30%);
+                transform: translateX(30%);
+                top:19%;
                 margin: 0px;
+                padding: 0;
                 z-index: 1;
 
             }
             .next_div {
-                height: 80vh;
-                width: 50vw;
-                background: #e85a4f;
+                height: 60vh;
+                width: 40vw;
+                
+
+                background: #44006b;
                 position: absolute;
-                left: 50%;
+                left: 60%;
                 -webkit-transform: translateX(-25%);
                 transform: translateX(-25%);
-                
+                top:25%;
                 z-index: 2;
                 margin: 0px;
 
@@ -79,18 +86,19 @@
             }
 
             .title {
-                font-size: 100px;
+                font-size: 75px;
                 font-family: 'Amatic SC', cursive;
                 color: #e85a4f; 
-                top: 30%;
+                top: 25%;
+                width: 100%;
                 
             }
             .title_shad {
-                font-size: 90px;
+                font-size: 60px;
                 font-family: 'Alfa Slab One', cursive;
                 color: #e0d3d3;
                 
-                top: 22%;
+                top: 20%;
             }
             .center_text {
                 position: absolute;
@@ -99,10 +107,10 @@
                 transform: translateX(-50%);
             }
             .subtitle {
-                font-size: 20px;
+                font-size: 15px;
                 font-family: 'Nunito', sans-serif;
                 letter-spacing: .1rem;
-                top: 50%;
+                top: 52%;
                 font-weight: 600;
             }
             .subtext{
@@ -115,7 +123,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -133,13 +141,13 @@
             .mySlides {display: none;}
             .text {
                 color: #f2f2f2;
-                font-size: 25px;
+                font-size: 15px;
                 padding: 8px 12px;
                 position: absolute;
                 top: 55%;
                 width: 80%;
                 text-align: center;
-                font-weight: bold;
+               
                 letter-spacing: .1rem;
             }
             .dot {
@@ -186,16 +194,16 @@
                 
             }
             .register {
-                background-color: #e6b71c;
+                background-color: #f0c023;
                 color: white;
                 transition-duration: 0.4s;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                padding-left: 50px;
-                padding-right: 50px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 30px;
+                padding-right: 30px;
                 border: none;
-                font-size: 20px;
-                border-radius: 30px;
+                font-size: 15px;
+                border-radius: 20px;
                 letter-spacing: .1rem;
                 position: absolute;
                 bottom: 23%;
@@ -209,9 +217,29 @@
             }
             .login {
                 position: absolute;
-                bottom: 5%;
+                bottom: 7%;
                 color: white;
-                font-size: 16px;
+                font-size: 15px;
+                width: 100%;
             }
             
-       
+            .log-text{
+                color: #f0c023;
+            }
+            .bg {
+                top: 37%;
+                width: 60%;
+                opacity: .8;
+            }
+            .print{
+                color:white;
+                font-size: 100px;
+                top: 30%;
+
+            }
+
+            .welcome_msg{
+                margin-top: 0;
+                color: #f0c023;
+            }
+            

@@ -1,0 +1,141 @@
+
+
+html, body {
+    /* background-color: #EAE7DC; */
+    background: rgb(42,0,85);
+    background: linear-gradient(146deg, rgba(42,0,85,1) 0%, rgb(70, 0, 110) 51%, rgb(109, 0, 119) 100%);
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.navbar{
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+   
+}
+.full-height {
+    max-height: fit-content;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+.links > a {
+    color: white;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.one-edge-shadow {
+    -webkit-box-shadow: 0 8px 6px -10px black;
+    -moz-box-shadow: 0 8px 6px -10px black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.printer-bg{
+    width: 100%;
+}
+.d-flex {
+    display: flex !important;
+  }
+  .w-100 {
+    width: 100% !important;
+  }
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .first-con{
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 10%;
+      margin-bottom: 5%;
+  }
+.textarea{
+   padding: 10px;
+   margin-top: 3%;
+}
+.w-msg{
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
+}
+.msg{
+    color: thistle;
+    font-size: 20px;
+}
+.mySlides {display: none;}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+
+    @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+
+.signup-btn{
+    text-decoration: none;
+    color: thistle;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(146deg, rgba(42,0,85,1) 0%, rgb(70, 0, 110) 51%, rgb(109, 0, 119) 100%), radial-gradient(circle at top left,  #19d7f8, #d40afc,#ffeb94 );
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    width: 100px;
+    text-align: center;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+.text{
+    font-size: 15px;
+    margin: 8px 20px;
+}
+.login{
+    color: thistle;
+    padding-top: 5%;
+    margin-left: -10%;
+    text-align: center;
+}
+.login a{
+    color: wheat;
+}
+
+.second-con{
+    height: 500px;
+    background-color: thistle;
+    width: 100%;
+}

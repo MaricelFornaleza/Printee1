@@ -6,7 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/jpg" href="/img/printee_logo.png"/>
+    <link rel="icon" type="image/jpg" href="/img/bg.png"/>
     <title>Printee</title>
 
     <!-- Scripts -->
@@ -17,13 +17,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/content.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
-                <img src="/img/printee_logo.png" style="height: 40px;">
+                <img src="/img/bg.png" style="height: 40px;">
                 <a class="navbar-brand pt-3 pl-2" href="{{ url('/') }}">     
                     Printee
                 </a>

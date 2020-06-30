@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 @section('content')
 <div class="container-small">
     <form action="/post/{{$post->id}}" enctype="multipart/form-data" method="post">
@@ -13,13 +14,13 @@
                 <div class="">
                     <h1>Edit Post</h1>
                 </div>
-                <div class="form-group post-con">
+                <div class="form-group ">
+                     
                     <label for="description" class="col-form-label">Post description</label>
-
-                        
+                    
                         <input id="description" 
                             type="text" 
-                            class="form-control @error('description') is-invalid @enderror" 
+                            class="mt-0 form-control @error('description') is-invalid @enderror" 
                             name="description"
                             value="{{ $post->description }}"  
                             autocomplete="description" autofocus>

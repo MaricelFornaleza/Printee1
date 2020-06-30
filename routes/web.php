@@ -16,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/front', function () {
+    return view('front');
+});
 Route::get('/auth/login', 'Auth\LoginController@authenticated');
 
 Route::get('/post/create', 'PostsController@create');

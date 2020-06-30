@@ -1,44 +1,57 @@
 @extends('layouts.app')
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <!-- Styles -->
+    <link href="{{ asset('css/transaction.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 @section('content')
 <div class="container-small ">
     <div class="row bg-white shadow-sm">
-        
-        <section class="first shadow-sm align-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f76c6c" fill-opacity="1" d="M0,288L80,288C160,288,320,288,480,266.7C640,245,800,203,960,208C1120,213,1280,267,1360,293.3L1440,320L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
-            </svg>
-        </section>
-        <section class="second align-center">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#f8e9a1" fill-opacity="0.6" d="M0,64L80,58.7C160,53,320,43,480,42.7C640,43,800,53,960,90.7C1120,128,1280,192,1360,224L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
-        </svg>
-
-        </section>
-
+            <div class="profile left-text">
+                <img src="/img/P_icon.png" class="rounded-circle one-edge-shadow" style="height: 210px; width: 210px; border: 10px solid white;">
+            </div>
         <div class="d-row-head align-middle">
-            <div class="col-3 p-5">
-                <img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331256__340.png" class="rounded-circle" style="height: 200px; width: 200px;">
-            </div>
-            <div class="col-9 pt-5">
-                <div class="d-flex justify-content-between align-items-baseline">
-                    <h1>{{ $user->username }}</h1>
-                    <a href="/transaction/upload/{{$user -> id}}">Transactions</a>
+            <div class="col-12 p-3 ">
+                <div class="d-flex user-label">
+                    <div class="col-6 pt-0">
+                        <div class="font-weight-bold ">
+                            <h1 class="">{{ $user->username }}</h1>
+                        </div>
                     
+                        <div class="font-weight-bold">{{ $user->email }}</div>
+                        <div>{{ $user->phone }}</div>
+                        <div> {{ $user->address }}</div>
+                    </div>
+                    <div class = "post-con ">
+                        <p class="number">
+                        <strong>{{$user->transactions->count()}}</strong>
+                        </p>
+                       
+                        <p class="label">TRANSACTIONS</p>
+                    </div>
+                        
                 </div>
-                <div class="d-flex">
-                    <div class = "pr-5"><strong></strong> posts</div>
-                    <div class = "pr-5"><strong>23k</strong> transactions</div>
-                    
-                </div>
-                <div class="pt-4 font-weight-bold">{{ $user->email }}</div>
-                <div>{{ $user->phone }}</div>
-                <div> {{ $user->address }}</div>
+
+                
             </div>
         
-            <div class="col-9">
-                <table>
-                    <tr>
+            <div class="col-12 table-wrapper shadow-sm">
+                <div class="table-title">
+                    <div class="">
+                        <div class="col-sm-6">
+                            <h2>Transactions</h2>
+                        </div>
+                    </div>
+                </div>
+                <table  class="table table-striped table-hover">
+                    <tr >
                         <th>Username</th>
                         <th>File</th>
                         <th>Description</th>
@@ -70,9 +83,11 @@
        
  
 
-    </div>
+        </div>
         
-
+        <div class="pg-links col-12 " >
+                {{$transactions->links()}}
+            </div>
         
     </div>
     

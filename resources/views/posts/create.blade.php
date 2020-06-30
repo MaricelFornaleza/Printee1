@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+<link href="{{ asset('css/user.css') }}" rel="stylesheet">
 @section('content')
 <div class="container-small">
     <form action="/post" enctype="multipart/form-data" method="post">
@@ -7,12 +8,12 @@
     @csrf 
     <div class="c-row">
     
-        <div class="">
+        <div class="w-100">
 
                 <div class="">
                     <h1>Add New Post</h1>
                 </div>
-                <div class="form-group post-con">
+                <div class="form-group ">
                     <label for="description" class="col-form-label">Post description</label>
 
                         

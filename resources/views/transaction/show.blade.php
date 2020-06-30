@@ -1,152 +1,78 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-/* Set height of body and the document to 100% to enable "full page tabs" */
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-/* Style tab links */
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 33.3%;
-}
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
 
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-  width: 100%;
-}
-
-
-#Request {background-color: green;}
-#Queue {background-color: blue;}
-#Completed {background-color: orange;}
-#defaultOpen{display:block;}
-
-</style>
+        <!-- icon -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        <!-- Styles -->
+        <link href="{{ asset('css/transaction.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 @section('content')
 <div class="container-small ">
     <div class="row bg-white shadow-sm">
-        
-        <section class="first shadow-sm align-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f76c6c" fill-opacity="1" d="M0,288L80,288C160,288,320,288,480,266.7C640,245,800,203,960,208C1120,213,1280,267,1360,293.3L1440,320L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
-            </svg>
-        </section>
-        <section class="second align-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f8e9a1" fill-opacity="0.6" d="M0,64L80,58.7C160,53,320,43,480,42.7C640,43,800,53,960,90.7C1120,128,1280,192,1360,224L1440,256L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
-            </svg>
-        </section>
+       
+                <div class="profile left-text">
+                    <img src="/img/P_icon.png" class="rounded-circle one-edge-shadow" style="height: 210px; width: 210px; border: 10px solid white;">
+                </div>
+            <div class="d-row-head align-middle">
 
-        <div class="d-row-head align-middle">
-            <div class="col-3 p-5">
-                <img src="https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331256__340.png" class="rounded-circle" style="height: 200px; width: 200px;">
-            </div>
-            <div class="col-9 pt-5">
-
-                <div class="d-flex justify-content-between align-items-baseline">
-                    <h1>{{ $user->username }}</h1>  
+                <div class="col-12 p-3 ">
+                    <div class="d-flex label-con">
+                        <div class = "post-con  ">
+                            <p class="number ">
+                                <strong> {{$user->posts->count()}}</strong>
+                            </p>    
+                            <p class="label">
+                                POSTS
+                            </p>
+                        </div>
+                        <div class = "post-con ">
+                            <p class="number">
+                            <strong>{{$count}}</strong>
+                            </p>
+                        
+                            <p class="label">TRANSACTIONS</p>
+                        </div>
+                            
+                    </div>
+                </div>
+                
+                <div class="col-12  pb-3">
+                    <div class=" font-weight-bold">
+                        <h1 class="username">{{ $user->username }}</h1>
+                    </div>
+                    
+                    <div class="font-weight-bold">{{ $user->email }}</div>
+                    <div>{{ $user->phone }}</div>
+                    <div> {{ $user->address }}</div>
                 </div>
 
-                <div class="d-flex">
-                    <div class = "pr-5"><strong></strong> posts</div>
-                    <div class = "pr-5"><strong>23k</strong> transactions</div>  
-                </div>
-
-                <div class="pt-4 font-weight-bold">{{ $user->email }}</div>
-                <div>{{ $user->phone }}</div>
-                <div> {{ $user->address }}</div>
-            </div>
-        
-            <div class="col-12">
+            <div class="col-12 mt-4 mb-4 p-0">
 
                  <!-- tabs -->
-                <button class="tablink" onclick="openPage('Request', this, 'green')" id="defaultOpen">Requests</button>
-                <button class="tablink" onclick="openPage('Queue', this, 'blue')">Queue</button>
-                <button class="tablink" onclick="openPage('Completed', this, 'orange')">Completed</button>
+                <button class="tablink" onclick="openPage('Request', this, '#3a0268')" id="defaultOpen">Requests</button>
+                <button class="tablink" onclick="openPage('Queue', this, '#5e0782')">Queue</button>
+                <button class="tablink" onclick="openPage('Completed', this, '#a727c2')">Completed</button>
 
                 <div id="Request" class="tabcontent">
-                    <h3>Request</h3>
-                        <table class="w3-table-all w3-hoverable">
-                            <tr class="w3-light-grey">
-                                <th>Username</th>
-                                <th>File</th>
-                                <th>Description</th>
-                                <th>Date</th>
-                                <th>Status</th>
-                                <th class="colspan-2">Action</th>
-
-                            </tr>
-                            @forelse($transactions as $transaction)
-                                @if($transaction->status=='request')
-                                    <tr>
-                                        <td>{{$transaction->name}}</td>
-                                        <td>{{$transaction->file}}</td>
-                                        <td>{{$transaction->description}}</td>
-                                        <td>{{$transaction->created_at}}</td>
-                                        <td>{{$transaction->status}}</td>
-                                        <td>
-                                    <form action="/transaction/{{$transaction->id}}" enctype="multipart/form-data" method="post">
-                                    @csrf 
-                                    @method('PUT')
-                                        <input type="hidden" value="queue" name="status">
-                                        <button class="btn btn-primary">Accept</button>
-                                    </form>
-                                     |<form action="/transaction/{{$transaction->id}}" enctype="multipart/form-data"method="post">
-                                    @csrf 
-                                    @method('PUT')
-                                        <input type="hidden" value="cancelled" name="status">
-                                        <button class="btn btn-primary">Decline</button>
-                                    </form>
-                                </td>
-                                        
-                                    </tr>
-                                @endif
-
-                            @empty
-                            <tr>
-                                <td class="colspan-5">
-                                    No record
-                                </td>
-                            </tr>
-                                
-                            @endforelse
-                    </table>
-
-                </div>
-
-                <div id="Queue" class="tabcontent">
-                    <h3>Queue</h3>
-                    <table class="w3-table-all w3-hoverable">
-                        <tr class="w3-light-grey">
-                            <th>Username</th>
-                            <th>File</th>
-                            <th>Description</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Action</th>
-
-                        </tr>
-                        @forelse($transactions as $transaction)
-                            @if($transaction->status=='queue')
+                
+                <p class="note">Here are the requests from our valued customers. <br> Click accept and start printing!</p>
+                <table class="table table-striped table-hover">
+                   
+                                <tr class="">
+                                    <th>Username</th>
+                                    <th>File</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th class="colspan-2">Action</th>
+                                </tr>
+                    @forelse($transactions as $transaction)
+                        @if($transaction->status=='request')            
                                 <tr>
                                     <td>{{$transaction->name}}</td>
                                     <td>{{$transaction->file}}</td>
@@ -154,35 +80,99 @@ body, html {
                                     <td>{{$transaction->created_at}}</td>
                                     <td>{{$transaction->status}}</td>
                                     <td>
+                                        <div class="d-flex ">
+                                        <form action="/transaction/{{$transaction->id}}" enctype="multipart/form-data" method="post">
+                                        @csrf 
+                                        @method('PUT')
+                                            <input type="hidden" value="queue" name="status">
+                                            <button class="btn btn-primary mr-2">Accept</button>
+                                        </form>
+                                        <form action="/transaction/{{$transaction->id}}" enctype="multipart/form-data"method="post">
+                                        @csrf 
+                                        @method('PUT')
+                                            <input type="hidden" value="cancelled" name="status">
+                                            <button class="btn btn-primary">Decline</button>
+                                        </form>
+
+                                        </div>
+                                        
+                                    </td>
+                                        
+                                </tr>
+                    @endif
+
+                @empty
+                        <tr class="">
+                            <td class="colspan-5">
+                                No record found
+                            </td>
+                        </tr>
+                                
+                @endforelse
+                    </table>
+
+                </div>
+            
+                <div id="Queue" class="tabcontent">
+                    <p class="note">Download the file!  <br> Click finish when done.</p>
+                   
+                        
+                        <table class="table table-striped table-hover" >
+                       
+                            <tr class="">
+                                <th>Username</th>
+                                <th>File</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
+                            </tr>
+                            @forelse($transactions as $transaction)
+                        @if($transaction->status=='queue')    
+                            <tr>
+                                <td>{{$transaction->name}}</td>
+                                <td>{{$transaction->file}}</td>
+                                <td>{{$transaction->description}}</td>
+                                <td>{{$transaction->created_at}}</td>
+                                <td>{{$transaction->status}}</td>
+                                <td>
+                                    <div class="d-flex">
                                     <form action="/transaction/{{$transaction->id}}" enctype="multipart/form-data"method="post">
                                     @csrf 
                                     @method('PUT')
-                                        <input type="hidden" value="completed" name="status">
-                                        <button class="btn btn-primary">Finish</button>
+                                        <input type="hidden" value="completed" name="status" >
+                                        <button class="btn btn-primary mr-2 pt-2 pb-2" >Finish</button>
                                     </form>
                                     <a href="/storage/uploads/{{$transaction->file}}" download="{{$transaction->file}}">
-        <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-download">Download</i></button>
-        </a>
-                                    </td>
+                                    <button type="button" class="btn btn-primary "><i class="material-icons"  >cloud_download</i></button>
+                                    </a>
+                                    </div>
                                     
-                                </tr>
-                            @endif
+                                    
+                                </td>
+                                    
+                            </tr>
+                        @endif
 
-                        @empty
-                        <tr>
+                    @empty
+                        <tr class="">
                             <td class="colspan-5">
-                                No record
+                                No record found
                             </td>
                         </tr>
                             
-                        @endforelse
+                    @endforelse
                     </table>
                 </div>
 
                 <div id="Completed" class="tabcontent">
-                    <h3>Completed</h3>
-                    <table class="w3-table-all w3-hoverable">
-                        <tr class="w3-light-grey">
+                <p class="note">Successfull transactions. <br> Keep it up!.</p>
+                    
+                        
+                    <table class="table table-striped table-hover">
+                   
+                        <tr class="">
                             <th>Username</th>
                             <th>File</th>
                             <th>Description</th>
@@ -192,7 +182,7 @@ body, html {
 
                         </tr>
                         @forelse($transactions as $transaction)
-                            @if($transaction->status=='completed')
+                        @if($transaction->status=='completed')    
                                 <tr>
                                     <td>{{$transaction->name}}</td>
                                     <td>{{$transaction->file}}</td>
@@ -205,14 +195,14 @@ body, html {
                                 </tr>
                             @endif
 
-                        @empty
+                    @empty
                         <tr>
                             <td class="colspan-5">
-                                No record
+                                No record found
                             </td>
                         </tr>
                             
-                        @endforelse
+                    @endforelse
                     </table>
                 </div>
                 <!-- endtabs -->

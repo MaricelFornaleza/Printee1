@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="icon" type="image/jpg" href="/img/printee_logo.png"/>
+        <link rel="icon" type="image/jpg" href="/img/bg.png"/>
         <title>Printee</title>
 
 
@@ -13,6 +13,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
 
+        <!-- icon -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         
         <!-- Styles -->
         <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
@@ -47,7 +49,8 @@
             <div class="content">
                 
                 <div class="parent">
-                    <div class="welcome two-edge-shadow">
+                    <div class="welcome  foldtl two-edge-shadow">
+                        <img src="img/bg.png" alt=""  class="bg center_text">
                         <div class="title_shad center_text">
                             2020
                         </div>
@@ -61,20 +64,20 @@
                             by MissCL
                         </div>
                     </div>
-                    <div class="next_div two-edge-shadow">
+                    <div class="next_div  two-edge-shadow">
                         <div class="carousel center_text">
                             <div class="mySlides fade">
-                            <img src="img/printer.png" class="center_text">
+                            <i class="material-icons center_text print" >print</i>
                             <div class="text center_text">Partner with excellent printing companies in Naga City.</div>
                             </div>
 
                             <div class="mySlides fade">
-                            <img src="img/fast.png" class="center_text">
+                            <i class="material-icons center_text print" >receipt_long</i>
                             <div class="text center_text">Fast Transaction! Send it now, get it later.</div>
                             </div>
 
                             <div class="mySlides fade">
-                            <img src="img/delivery.png" class="center_text">
+                            <i class="material-icons center_text print" >local_shipping</i>
                             
                             <div class="text center_text">Pick-up or Delivery options</div>
                             </div>
@@ -91,8 +94,8 @@
                         @if (Route::has('login'))
                             <div class="buttons center_text">
                                 @auth
-                                    <h1 class="welcome_msg">Hello {{ auth()->user()->name}}! Welcome to Printee.</h1>
-                                    <a href="{{ route('admin.show', auth()->user()->id)}}"><button class="dash center_text">
+                                    <h2 class="welcome_msg">Hello {{ auth()->user()->name}}! <br> Welcome to Printee.</h2>
+                                    <a href="{{ route('admin.show', auth()->user()->id)}}"><button class="register center_text">
                                     Go to Dashboard
                                     </button></a>
                                 @else
@@ -100,7 +103,7 @@
                                             REGISTER
                                         </button></a>
                                         <div class="login center_text">
-                                            Already have an account? Click here to <a href="{{ route('login') }}">Login</a>
+                                            Already have an account? Click here to <a href="{{ route('login') }}" class="log-text">Login</a>
                                         </div>
                                 @endauth
                             

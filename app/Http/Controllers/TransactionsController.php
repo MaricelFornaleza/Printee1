@@ -35,7 +35,7 @@ class TransactionsController extends Controller
     {
         $transactions = DB::table('transactions')->where('transactions.user_id', $user)
         ->join('users', 'transactions.admin_id', '=','users.id')
-        ->select('transactions.*', 'users.name')->paginate(12);
+        ->select('transactions.*', 'users.name')->orderBy('created_at','DESC')->paginate(12);
         $user = User::findOrFail($user);
 
         return view('transaction.index', [
@@ -110,11 +110,11 @@ class TransactionsController extends Controller
         ->join('users', 'transactions.user_id', '=','users.id')
         ->select('transactions.*', 'users.name')->paginate(12);
         $user = User::findOrFail($user);
-      
+        $count =$transactions->count();
         
         return view('transaction.show', [
             'user' => $user,
-        ],compact('transactions'));
+        ],compact('transactions', 'count'));
     }
 
     /**

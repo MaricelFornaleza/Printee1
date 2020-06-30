@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Transaction;
+use Illuminate\Support\Facades\DB;
 
 class AdminsController extends Controller
 {
@@ -20,11 +21,14 @@ class AdminsController extends Controller
     public function index($user)
     {
 
-        $posts = Post::orderBy('created_at','DESC')->paginate(6);
-        $user = User::findOrFail($user);
+        $posts = Post::where('user_id', $user)->orderBy('created_at','DESC')->paginate(6);
+        
 
+       
+        $count =Transaction::where('admin_id', $user);
+        $user = User::findOrFail($user);
         return view('admin', [
             'user' => $user,
-        ])->with('posts', $posts);
+        ], compact('posts', 'count'));
     }
 }

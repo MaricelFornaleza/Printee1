@@ -49,6 +49,8 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  
+}
 }
 
 article,
@@ -72,7 +74,8 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #EAE7DC;
+  background: rgb(223, 223, 223);
+
 }
 .one-edge-shadow {
   -webkit-box-shadow: 0 8px 6px -10px black;
@@ -273,8 +276,10 @@ button {
 }
 
 button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: none !important;
+}
+input:focus {
+  outline: none !important;
 }
 
 input,
@@ -311,6 +316,9 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
+  outline:none;
+
+
 }
 
 button:not(:disabled),
@@ -616,7 +624,6 @@ pre code {
   margin-right: auto;
   margin-left: auto;
   
-  
 }
 
 .dashboard {
@@ -703,7 +710,8 @@ pre code {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-  margin-top: 100px !important;
+  margin-top: 100px;
+ 
 
 }
 
@@ -714,8 +722,6 @@ pre code {
   margin-left: auto;
   margin-right: auto;
   background: white;
-  margin-top: 50px;
-
 }
 .c-row {
   display: flex;
@@ -724,7 +730,8 @@ pre code {
   margin-left: auto;
   margin-right: auto;
   background: white;
-  padding: 50px;
+  padding: 35px;
+  padding-top: 20px;
 
 }
 .post-con {
@@ -740,10 +747,16 @@ pre code {
   margin-left: auto;
   margin-right: auto;
   clip-path: url(#wave);
-  margin-top: 50px;
-
   /* background: #9e5a63;
   border-radius: 10px; */
+}
+.a-row-head {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 .p-row {
   display: flex;
@@ -3467,6 +3480,7 @@ input[type=submit].btn-block,
 input[type=reset].btn-block,
 input[type=button].btn-block {
   width: 100%;
+  
 }
 
 .fade {
@@ -4553,7 +4567,7 @@ input[type=button].btn-block {
 }
 
 .nav-link.disabled {
-  color: #6c757d;
+  color: #ffffff;
   pointer-events: none;
   cursor: default;
 }
@@ -4578,14 +4592,14 @@ input[type=button].btn-block {
 }
 
 .nav-tabs .nav-link.disabled {
-  color: #6c757d;
+  color: #ffffff;
   background-color: transparent;
   border-color: transparent;
 }
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: #ffffff;
   background-color: #f8fafc;
   border-color: #dee2e6 #dee2e6 #f8fafc;
 }
@@ -4632,6 +4646,23 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  background: rgb(42,0,85);
+  background: linear-gradient(146deg, rgba(42,0,85,1) 0%, rgba(110,5,170,1) 51%, rgba(181,21,194,1) 100%);
+  
+ 
+}
+.navbar:after{
+  background: inherit;
+  top: -100px;
+  content: '';
+  display: block;
+  height: 350px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transform: skewY(-5.5deg);
+  transform-origin: 100%;
+  z-index: -1;
  
 }
 
@@ -4657,7 +4688,7 @@ input[type=button].btn-block {
   line-height: inherit;
   white-space: nowrap;
   font-family: 'Amatic SC', cursive;
-  color: #e85a4f !important;
+  color: #ffffff !important;
   text-transform: uppercase !important;
 
 }
@@ -4973,16 +5004,16 @@ input[type=button].btn-block {
 
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:focus {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(71, 187, 255, 0.89);
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
@@ -5345,9 +5376,10 @@ input[type=button].btn-block {
 
 .pagination {
   display: flex;
-  padding-left: 0;
+  padding-left: 40%;
   list-style: none;
   border-radius: 0.25rem;
+  align-items: center !important;
 }
 
 .page-link {
@@ -5356,7 +5388,7 @@ input[type=button].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #3490dc;
+  color: #5e0782;
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
@@ -5389,16 +5421,16 @@ input[type=button].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #5e0782;
+  border-color: #5e0782;
 }
 
 .page-item.disabled .page-link {
-  color: #6c757d;
+  color: #5e0782;
   pointer-events: none;
   cursor: auto;
   background-color: #fff;
-  border-color: #dee2e6;
+  border-color: #5e0782;
 }
 
 .pagination-lg .page-link {

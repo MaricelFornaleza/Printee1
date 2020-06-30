@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+<link href="{{ asset('css/user.css') }}" rel="stylesheet">
 @section('content')
 <div class="container-small">
     <form action="/transaction" enctype="multipart/form-data" method="post">
@@ -7,13 +8,13 @@
     @csrf 
     <div class="c-row">
     
-        <div class="">
+        <div class="w-100">
 
                 <div class="">
                 
-                    <h1>Create New Transaction </h1>
+                    <h1>New Transaction </h1>
                 </div>
-                <div class="form-group post-con">
+                <div class="form-group ">
                     <input type="hidden" name="admin_id" value="{{$admin_id}}">
                     <label for="description" class="col-form-label">Description</label>
 
@@ -23,7 +24,7 @@
                             class="form-control @error('description') is-invalid @enderror" 
                             name="description"
                             value="{{ old('description') }}"  
-                            autocomplete="description" autofocus>
+                            autocomplete="description" placeholder="Indicate your custom format" autofocus>
 
                         @error('description')
                             <span class="invalid-feedback" role="alert">

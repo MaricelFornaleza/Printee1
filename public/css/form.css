@@ -1,0 +1,32 @@
+
+.btn-primary{
+    background-color: #5e0782 !important;
+    border-color: #5e0780 !important;
+}
+.log-card{
+    width: 100% !important;
+    
+}
+.card-body{
+    width: 100% !important;
+    margin-top: 0;
+
+}
+.card-header{
+    font-size: 20px !important;
+    padding-left: 0!important;
+}
+.logbtn{
+    padding: 8px 20px !important;
+}
+.l-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding: 35px;
+    padding-top: 20px;
+  
+  }
