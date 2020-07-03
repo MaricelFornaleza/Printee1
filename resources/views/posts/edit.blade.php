@@ -1,36 +1,33 @@
 @extends('layouts.app')
-    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/user.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+<link href="{{ asset('css/user.css') }}" rel="stylesheet">
 @section('content')
 <div class="container-small">
     <form action="/post/{{$post->id}}" enctype="multipart/form-data" method="post">
 
-    @csrf 
-    @method('PUT')
-    <div class="c-row">
-    
-        <div class="">
+        @csrf
+        @method('PUT')
+        <div class="c-row">
+
+            <div class="">
 
                 <div class="">
                     <h1>Edit Post</h1>
                 </div>
                 <div class="form-group ">
-                     
-                    <label for="description" class="col-form-label">Post description</label>
-                    
-                        <input id="description" 
-                            type="text" 
-                            class="mt-0 form-control @error('description') is-invalid @enderror" 
-                            name="description"
-                            value="{{ $post->description }}"  
-                            autocomplete="description" autofocus>
 
-                        @error('description')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                        
+                    <label for="description" class="col-form-label">Post description</label>
+
+                    <input id="description" type="text"
+                        class="mt-0 form-control @error('description') is-invalid @enderror" name="description"
+                        value="{{ $post->description }}" autocomplete="description" autofocus>
+
+                    @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
                 </div>
 
                 <div class="">
@@ -41,10 +38,10 @@
                 <div class=" pt-4">
                     <button class="btn btn-primary">Update Post</button>
                 </div>
+            </div>
         </div>
-    </div>
     </form>
-<!-- 
+    <!-- 
 
    <form action="/post" enctype="multipart/form-data" method="post">
 

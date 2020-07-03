@@ -44,7 +44,14 @@ Route::post('/transaction', 'TransactionsController@store');
 
 
 Route::get('/admin/{user}', 'AdminsController@index')->name('admin.show');
+Route::get('/admin/{user}/edit', 'AdminsController@edit');
+Route::put('/admin/{user}', 'AdminsController@update');
+
+
 Route::get('/user/{user}', 'UsersController@index')->name('user.show');
+Route::get('/user/{user}/edit', 'UsersController@edit');
+Route::put('/user/{user}', 'UsersController@update');
+
 
 Auth::routes();
 

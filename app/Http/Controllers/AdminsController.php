@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Transaction;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
+use Illuminate\Http\UploadedFile;
+
 
 class AdminsController extends Controller
 {
@@ -30,5 +33,34 @@ class AdminsController extends Controller
         return view('admin', [
             'user' => $user,
         ], compact('posts', 'count'));
+    }
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('admin/edit')->with("user", $user);
+    }
+    public function update(Request $request, $id)
+    {
+
+        $file = $request->file('avatar');
+        $file->getClientOriginalName();
+        $filePath =time().'.'. $file->getClientOriginalName();
+        Image::make($file)->save(public_path('/img/'. $filePath));
+
+       
+        // $loc=$file->storeAs('public/img', $filePath);
+        // $filePath->store('toPath', ['disk' => 'public']);
+
+      
+
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->phone= $request->phone;
+        $user->address = $request->address;
+        $user->avatar = $filePath;
+        $user->save();
+        return redirect('/admin/'.auth()->user()->id);
     }
 }

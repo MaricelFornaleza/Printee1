@@ -35,7 +35,7 @@ class TransactionsController extends Controller
     {
         $transactions = DB::table('transactions')->where('transactions.user_id', $user)
         ->join('users', 'transactions.admin_id', '=','users.id')
-        ->select('transactions.*', 'users.name')->orderBy('created_at','DESC')->paginate(12);
+        ->select('transactions.*', 'users.username')->orderBy('created_at','DESC')->paginate(12);
         $user = User::findOrFail($user);
 
         return view('transaction.index', [
@@ -84,8 +84,8 @@ class TransactionsController extends Controller
         $file = $request->file('file');
         $file->getClientOriginalName();
 
-        $filePath = $file->getClientOriginalName();
-        $loc=$file->storeAs('public/storage/uploads', $filePath);
+        $filePath = time().'.'.$file->getClientOriginalName();
+        $loc=$file->storeAs('public', $filePath);
 
         auth()->user()->transactions()->create([
             'admin_id' => $data['admin_id'],

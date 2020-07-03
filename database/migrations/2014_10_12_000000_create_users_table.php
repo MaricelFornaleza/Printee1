@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('phone')->unique();
             $table->string('type');
             $table->string('password');
+            $table->string('avatar')->default('profile.png');
             $table->rememberToken();
             $table->timestamps();
         });

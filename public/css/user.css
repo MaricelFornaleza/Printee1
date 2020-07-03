@@ -15,6 +15,18 @@
     background-color: none;
     
 }
+
+.avatar_user{
+  transition: .5s ease;
+    backface-visibility: hidden;
+    background-color: none;
+    height: 210px; 
+    width: 210px; 
+    border: 10px solid white; 
+    object-fit:cover; 
+}
+
+
 .img-con:hover .image, .img-con:hover .text-caption{
   opacity: 0.3;
 }

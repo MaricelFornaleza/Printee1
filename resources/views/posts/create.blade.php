@@ -5,10 +5,10 @@
 <div class="container-small">
     <form action="/post" enctype="multipart/form-data" method="post">
 
-    @csrf 
-    <div class="c-row">
-    
-        <div class="w-100">
+        @csrf
+        <div class="c-row">
+
+            <div class="w-100">
 
                 <div class="">
                     <h1>Add New Post</h1>
@@ -16,37 +16,33 @@
                 <div class="form-group ">
                     <label for="description" class="col-form-label">Post description</label>
 
-                        
-                        <input id="description" 
-                            type="text" 
-                            class="form-control @error('description') is-invalid @enderror" 
-                            name="description"
-                            value="{{ old('description') }}"  
-                            autocomplete="description" autofocus>
 
-                        @error('description')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                        
+                    <input id="description" type="text" class="form-control @error('description') is-invalid @enderror"
+                        name="description" value="{{ old('description') }}" autocomplete="description" autofocus>
+
+                    @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+
                 </div>
 
                 <div class="">
                     <label for="image" class="col-form-label">Post Image</label>
                     <input type="file" class="form-control-file" id="image" name="image">
                     @error('image')
-                        <strong>{{ $message }}</strong>
+                    <strong>{{ $message }}</strong>
                     @enderror
                 </div>
 
                 <div class=" pt-4">
                     <button class="btn btn-primary">Add New Post</button>
                 </div>
+            </div>
         </div>
-    </div>
     </form>
-<!-- 
+    <!-- 
 
    <form action="/post" enctype="multipart/form-data" method="post">
 
