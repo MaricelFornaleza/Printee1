@@ -1,3 +1,19 @@
+<!-- 
+/*
+ * Filename: c:\laragon\www\printee\resources\views\transaction\index.blade.php
+ * Path: c:\laragon\www\printee
+ * Created Date: Thursday, June 25th 2020, 9:14:52 pm
+ * Author: Maricel L. Fornaleza
+ * Honor Code:
+ *   This is my own work and I have not received any unauthorized help in completing this. 
+ *   I have not copied from my classmate, friend, nor any unauthorized resource. 
+ *   I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
+ *   If proven guilty, I won't be credited any points for this endeavor.
+ * 
+ * Copyright (c) 2020 
+ */
+ -->
+
 @extends('layouts.app')
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 

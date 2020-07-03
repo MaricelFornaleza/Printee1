@@ -1,3 +1,19 @@
+<!-- 
+/*
+ * Filename: c:\laragon\www\printee\resources\views\admin.blade.php
+ * Path: c:\laragon\www\printee
+ * Created Date: Tuesday, June 23rd 2020, 12:54:40 pm
+ * Author: Maricel L. Fornaleza
+ * Honor Code:
+ *   This is my own work and I have not received any unauthorized help in completing this. 
+ *   I have not copied from my classmate, friend, nor any unauthorized resource. 
+ *   I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
+ *   If proven guilty, I won't be credited any points for this endeavor.
+ * 
+ * Copyright (c) 2020 
+ */
+ -->
+
 @extends('layouts.app')
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
@@ -14,7 +30,7 @@
 <div class="container-small ">
     <div class="row bg-white shadow-sm">
         <div class="profile left-text">
-            <img src="/img/{{$user->avatar}}" class="rounded-circle one-edge-shadow avatar_user" style="">
+            <img src="/img/{{$user->avatar}}" class="rounded-circle one-edge-shadow avatar_user" >
 
         </div>
         <div class="d-row-head align-middle">
