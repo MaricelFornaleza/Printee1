@@ -42,6 +42,11 @@ class AdminsController extends Controller
     public function update(Request $request, $id)
     {
 
+        $data = request()->validate([
+            
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
         $file = $request->file('avatar');
         $file->getClientOriginalName();
         $filePath =time().'.'. $file->getClientOriginalName();

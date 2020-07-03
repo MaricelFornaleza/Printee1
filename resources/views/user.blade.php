@@ -62,17 +62,6 @@
             </div>
 
 
-
-            <!-- <div class="col-12 pt-0">
-                <div class="font-weight-bold ">
-                    <h1 class="username">{{ $user->username }}</h1>
-                </div>
-
-                <div class="font-weight-bold">{{ $user->email }}</div>
-                <div>{{ $user->phone }}</div>
-                <div> {{ $user->address }}</div>
-            </div> -->
-
             <!-- for shops -->
             <div class="with-shadow mt-4 p-4" style="width: 100%">
                 <div class="d-flex col-12 mb-3 mt-3">
@@ -86,8 +75,8 @@
                             <img src="/img/{{$users->avatar}}" alt="Avatar"
                                 style="height:100px; width: 100%; object-fit:cover; ">
                             <div class="container">
-                                <h3><b>{{$users -> username}}</b> </h3>
-                                <p>{{$users -> phone}} <br>
+                                <h3 style="height: 30px; overflow-y:hidden;"><b>{{$users -> username}}</b> </h3>
+                                <p class="u-info">{{$users -> phone}} <br>
                                     {{$users -> address}}</p>
                                 <a href="/transaction/upload/{{$users -> id}}">
                                     <button class="create align-items-center d-flex justify-content-center">

@@ -93,7 +93,7 @@
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">Upload a profile
                                 picture</label>
                             <div class="col-md-7">
-                                <input type="file" class="form-control-file" id="avatar" name="avatar">
+                                <input type="file" class="form-control-file" id="avatar" name="avatar"  value="{{ $user->avatar }} ">
                                 @error('avatar')
                                 <strong>{{ $message }}</strong>
                                 @enderror
