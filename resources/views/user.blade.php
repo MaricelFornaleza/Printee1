@@ -39,7 +39,7 @@
                 <div class="d-flex user-label">
                     <div class="col-6 pt-0">
                         <div class="d-flex font-weight-bold ">
-                            <h1 class="">{{ $user->username }}</h1>
+                            <h2 class="">{{ $user->username }}</h2>
                             <a href="/user/{{$user->id}}/edit"><i class=" material-icons pr-2">edit</i>
                             </a>
                         </div>

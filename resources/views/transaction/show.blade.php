@@ -62,7 +62,7 @@
 
             <div class="col-12  pb-3">
                 <div class=" d-flex font-weight-bold">
-                    <h1 class="username">{{ $user->username }}</h1>
+                    <h2 class="username">{{ $user->username }}</h2>
                     <a href="/admin/{{$user->id}}/edit"><i class=" material-icons pr-2">edit</i>
                     </a>
                 </div>
