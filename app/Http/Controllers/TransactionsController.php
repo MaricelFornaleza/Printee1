@@ -108,7 +108,7 @@ class TransactionsController extends Controller
     {
         $transactions = DB::table('transactions')->where('transactions.admin_id', $user)
         ->join('users', 'transactions.user_id', '=','users.id')
-        ->select('transactions.*', 'users.name')->paginate(12);
+        ->select('transactions.*', 'users.*')->paginate(12);
         $user = User::findOrFail($user);
         $count =$transactions->count();
         

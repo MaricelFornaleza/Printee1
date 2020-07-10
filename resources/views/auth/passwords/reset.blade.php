@@ -14,7 +14,7 @@
  */
  -->
 
-extends('layouts.app')
+@extends('layouts.app')
 <link href="{{ asset('css/form.css') }}" rel="stylesheet">
 <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 @section('content')

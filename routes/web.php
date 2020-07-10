@@ -17,13 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/front', function () {
-    return view('front');
-});
 Route::get('/auth/login', 'Auth\LoginController@authenticated');
 
 Route::get('/post/create', 'PostsController@create');
@@ -32,7 +25,6 @@ Route::put('/post/{id}', 'PostsController@update');
 Route::delete('/post/{id}', 'PostsController@destroy');
 Route::post('/post', 'PostsController@store');
 
-
 Route::get('/transaction/upload/{id}', 'TransactionsController@upload')->name('transaction.upload');
 Route::get('/transaction/view/{id}', 'TransactionsController@view')->name('transaction.view');
 Route::put('/transaction/{id}', 'TransactionsController@update');
@@ -40,18 +32,18 @@ Route::get('/transaction/download/{file}', 'TransactionsController@download');
 Route::get('/transaction/{id}', 'TransactionsController@show')->name('transaction.show');
 Route::post('/transaction', 'TransactionsController@store');
 
-
-
-
 Route::get('/admin/{user}', 'AdminsController@index')->name('admin.show');
 Route::get('/admin/{user}/edit', 'AdminsController@edit');
 Route::put('/admin/{user}', 'AdminsController@update');
-
 
 Route::get('/user/{user}', 'UsersController@index')->name('user.show');
 Route::get('/user/{user}/edit', 'UsersController@edit');
 Route::put('/user/{user}', 'UsersController@update');
 
+Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::post('sms', 'SmsController@sendSms');
 
 Auth::routes();
 

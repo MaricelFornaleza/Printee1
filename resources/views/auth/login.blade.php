@@ -78,6 +78,11 @@
                                 <button type="submit" class="btn btn-primary logbtn">
                                     {{ __('Login') }}
                                 </button>
+                                
+                                <a href="{{ url('auth/google') }}" class="btn btn-primary logbtn"> 
+                                    <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Google-512.png" style="width: 20px; " alt=""> 
+                                    Login with Google
+                                </a>
                             </div>
                             <div class="text-center w-100">
                                 @if (Route::has('password.request'))

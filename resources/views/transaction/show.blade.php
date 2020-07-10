@@ -81,6 +81,13 @@
                 <button class="tablink" onclick="openPage('Completed', this, '#a727c2')">Completed</button>
 
                 <div id="Request" class="tabcontent">
+                    @if(Session::has('success'))
+                        <div class="alert alert-success alert-dismissible">
+                            <button class="close" type="button" data-dismiss="alert" aria-hidden="true">SMS Sent Sucessfully!</button>
+                            <h4><i class="icon fa fa-ban">{{Session('sucsess')}}</i></h4>
+                        </div>
+                    @endif
+
 
                     <p class="note">Here are the requests from our valued customers. <br> Click accept and start
                         printing!</p>
@@ -205,6 +212,8 @@
                             <th>Description</th>
                             <th>Date</th>
                             <th>Status</th>
+                            <th>Action</th>
+
 
 
                         </tr>
@@ -216,7 +225,18 @@
                             <td>{{$transaction->description}}</td>
                             <td>{{$transaction->created_at}}</td>
                             <td>{{$transaction->status}}</td>
+                            <td>
+                                <div class="d-flex">
+                                    <form action="{{url('sms')}}"
+                                        method="post">
+                                        @csrf
+                                        <input type="hidden" value="{{$transaction->phone}}" name="phone">
+                                        <button class="btn btn-primary mr-2 pt-2 pb-2" type="submit">Send SMS</button>
+                                    </form>
+                                </div>
 
+
+                            </td>
 
 
                         </tr>

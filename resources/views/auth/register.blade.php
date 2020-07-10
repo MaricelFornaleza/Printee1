@@ -110,8 +110,8 @@
                             <label for="type" class="col-md-4 control-label text-md-right">User Type:</label>
                             <div class="col-md-7">
                                 <select class="form-control" name="type" id="type">
-                                    <option value="service">Service Provider</option>
-                                    <option value="user">User</option>
+                                    <option value="service">Printing Shop</option>
+                                    <option value="user">Customer</option>
                                 </select>
                             </div>
                         </div>
@@ -148,6 +148,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <a href="{{ url('auth/google') }}" class="btn btn-primary">
+                                    <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Google-512.png"
+                                        style="width: 20px; " alt="">
+                                    Register with Google
+                                </a>
                             </div>
                         </div>
                     </form>

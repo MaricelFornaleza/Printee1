@@ -5683,7 +5683,7 @@ a.badge-dark.focus {
 .alert-dismissible .close {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   padding: 0.75rem 1.25rem;
   color: inherit;
 }
@@ -5720,6 +5720,7 @@ a.badge-dark.focus {
   color: #1d643b;
   background-color: #d7f3e3;
   border-color: #c7eed8;
+  height: 40px;
 }
 
 .alert-success hr {
